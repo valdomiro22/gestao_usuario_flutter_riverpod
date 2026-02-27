@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "276565192559",
+    "project_id": "feature-autentication",
+    "storage_bucket": "feature-autentication.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276565192559:android:4a1434482968a5129d029a",
+        "android_client_info": {
+          "package_name": "com.santos.valdomiro.feature_autentication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDChjrd6h1S6yiIbdB2xVdB3YifwFxHuKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
