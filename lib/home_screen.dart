@@ -18,12 +18,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text(
-            'Home',
-            style: TextStyle(color: Colors.white),
-          ),
+          child: Text('Home'),
         ),
-        backgroundColor: Colors.brown,
       ),
       body: Container(
         padding: EdgeInsets.all(16),
@@ -31,12 +27,38 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            CustomButtomWidget(texto: 'Deslogar', clique: () {
-              deslogarNotifier.deslogar();
-            },)
+            CustomButtomWidget(
+              texto: 'Alterar Nome',
+              clique: () {},
+            ),
+            const SizedBox(height: 16),
+
+            CustomButtomWidget(
+              texto: 'Alterar E-mail',
+              clique: () {},
+            ),
+            const SizedBox(height: 16),
+
+            CustomButtomWidget(
+              texto: 'Alterar Senha',
+              clique: () {},
+            ),
+            const SizedBox(height: 16),
+
+            CustomButtomWidget(
+              texto: 'Deslogar',
+              clique: () => deslogarNotifier.deslogar(),
+            ),
+            const SizedBox(height: 16),
+
+            CustomButtomWidget(
+              texto: 'Excluir Conta',
+              clique: () {},
+            ),
+
           ],
         ),
-      )
+      ),
     );
   }
 }

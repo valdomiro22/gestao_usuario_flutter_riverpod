@@ -1,3 +1,4 @@
+import 'package:feature_autentication/core/theme/app_theme_light.dart';
 import 'package:feature_autentication/navigate/app_navigate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,9 +24,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'Flutter Demo',
       routerConfig: router,
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: AppTheme.lightTheme,
       // home: const CadastroScreen(),
       debugShowCheckedModeBanner: false,
     );

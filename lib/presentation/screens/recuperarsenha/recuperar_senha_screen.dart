@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/common/constants/app_dimens.dart';
-import '../../../core/common/constants/app_strings.dart';
+import '../../../core/constants/app_dimens.dart';
+import '../../../core/constants/app_strings.dart';
 
 class RecuperarSenhaScreen extends ConsumerStatefulWidget {
   const RecuperarSenhaScreen({super.key});
