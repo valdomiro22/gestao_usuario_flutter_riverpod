@@ -42,6 +42,7 @@ dependencies:
   path: ^1.9.0  # Para o path da imagem de perfil
   dartz: ^0.10.1  # Para Exceptions -> Either
   firebase_core: ^4.4.0
+  cached_network_image: ^3.4.1  # Para Widget de foto de perfil
 
 dev_dependencies:
   flutter_test:

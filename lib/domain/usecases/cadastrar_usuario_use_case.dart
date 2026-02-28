@@ -18,14 +18,17 @@ class CadastrarUsuarioUseCase {
   }) async {
     final result = await _repository.createUser(email: email, password: senha);
 
-    return result.fold((failure) => Left(failure), (idUsuario) async {
-      if (idUsuario == null) {
-        return Left(AuthFailure('ID so usuario retornado do Auth é null'));
-      }
+    return result.fold(
+      (failure) => Left(failure),
+      (idUsuario) async {
+        if (idUsuario == null) {
+          return Left(AuthFailure('ID so usuario retornado do Auth é null'));
+        }
 
-      final usuarioComId = usuario.copyWith(id: idUsuario);
-      final resultInsert = await _usuarioRepository.insertUsuario(usuarioComId);
-      return resultInsert.fold((failure) => Left(failure), (_) => Right(unit));
-    });
+        final usuarioComId = usuario.copyWith(id: idUsuario);
+        final resultInsert = await _usuarioRepository.insertUsuario(usuarioComId);
+        return resultInsert.fold((failure) => Left(failure), (_) => Right(unit));
+      }
+    );
   }
 }

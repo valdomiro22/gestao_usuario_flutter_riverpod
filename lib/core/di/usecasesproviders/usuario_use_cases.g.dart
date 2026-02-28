@@ -427,7 +427,7 @@ final class RecuperarUsuarioUseCaseProvider
 }
 
 String _$recuperarUsuarioUseCaseHash() =>
-    r'9b7a0835d79689762eb1a10dae16006564068f95';
+    r'8fb4bb30a2982105713aba13df4010dee47da948';
 
 @ProviderFor(updateUsuarioUseCase)
 final updateUsuarioUseCaseProvider = UpdateUsuarioUseCaseProvider._();

@@ -68,7 +68,8 @@ RecuperarSenhaUseCase recuperarSenhaUseCase(Ref ref) {
 @riverpod
 RecuperarUsuarioUseCase recuperarUsuarioUseCase(Ref ref) {
   final rp = ref.read(usuarioRepositoryProvider);
-  return RecuperarUsuarioUseCase(rp);
+  final authRp = ref.read(authRepositoryProvider);
+  return RecuperarUsuarioUseCase(rp, authRp);
 }
 
 @riverpod
