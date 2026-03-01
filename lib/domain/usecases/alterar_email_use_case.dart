@@ -15,8 +15,11 @@ class AlterarEmailUseCase {
     required String newEmail,
     required String password,
     required UsuarioEntity usuario,
-    required String usuarioId,
   }) async {
+    if (usuario.id == null) {
+      return Left(FirestoreFailure('Usuário precisa ter um ID para ser atualizado'));
+    }
+    
     final authResult = await _authRepository.updateEmailAddress(
       newEmail: newEmail,
       password: password,
@@ -24,7 +27,7 @@ class AlterarEmailUseCase {
 
     return authResult.fold((failure) => Left(failure), (_) {
       final usuarioAtualizado = usuario.copyWith(email: newEmail);
-      return _usuarioRepository.updateUsuario(usuario: usuarioAtualizado, usuarioId: usuarioId);
+      return _usuarioRepository.updateUsuario(usuarioAtualizado);
     });
   }
 }

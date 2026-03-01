@@ -114,6 +114,13 @@ class _CadastroScreenState extends ConsumerState<CadastroScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       notifier.cadastrar();
+                      if (state.erroEmail != null || state.erroSenha != null) {
+                        _sobrenomeCtrl.clear();
+                        _senhaCtrl.clear();
+                        _confSenhaCtrl.clear();
+                        _emailCtrl.clear();
+                        _nomeCtrl.clear();
+                      }
                     },
                     child: const Text('Cadastrar', style: TextStyle(fontSize: 20)),
                   ),

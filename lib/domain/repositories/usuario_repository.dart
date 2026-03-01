@@ -6,10 +6,7 @@ import '../entities/usuario_entity.dart';
 abstract class UsuarioRepository {
   Future<Either<Failure, Unit>> insertUsuario(UsuarioEntity usuario);
 
-  Future<Either<Failure, Unit>> updateUsuario({
-    required UsuarioEntity usuario,
-    required String usuarioId,
-  });
+  Future<Either<Failure, Unit>> updateUsuario(UsuarioEntity usuario);
 
   Future<Either<Failure, UsuarioEntity?>> getUsuario(String id);
 

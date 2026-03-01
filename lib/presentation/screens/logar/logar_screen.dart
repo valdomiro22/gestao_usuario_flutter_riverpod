@@ -83,6 +83,10 @@ class _LoginScreenState extends ConsumerState<LogarScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       notifier.logar();
+                      if (state.erroEmail != null || state.erroSenha != null) {
+                        _emailCtrl.clear();
+                        _senhaCtrl.clear();
+                      }
                     },
                     child: const Text('Logar', style: TextStyle(fontSize: 20)),
                   ),

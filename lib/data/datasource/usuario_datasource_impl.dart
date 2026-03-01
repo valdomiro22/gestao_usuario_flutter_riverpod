@@ -127,11 +127,11 @@ class UsuarioDatasourceImpl implements UsuarioDatasource {
   }
 
   @override
-  Future<void> updateUsuario({required UsuarioModel usuario, required String usuarioId}) async {
+  Future<void> updateUsuario(UsuarioModel usuario) async {
     try {
       await _firestore
           .collection(_usuariosCollection)
-          .doc(usuarioId)
+          .doc(usuario.id)
           .set(usuario.toJson(), SetOptions(merge: true));
     } on FirebaseException catch (e) {
       switch (e.code) {

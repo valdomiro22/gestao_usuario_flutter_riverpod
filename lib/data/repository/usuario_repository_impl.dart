@@ -83,13 +83,10 @@ class UsuarioRepositoryImpl implements UsuarioRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> updateUsuario({
-    required UsuarioEntity usuario,
-    required String usuarioId,
-  }) async {
+  Future<Either<Failure, Unit>> updateUsuario(UsuarioEntity usuario) async {
     try {
       final model = usuario.toModel();
-      await _datasource.updateUsuario(usuario: model, usuarioId: usuarioId);
+      await _datasource.updateUsuario(model);
       return const Right(unit);
     } on FirestoreException catch (e) {
       return Left(FirestoreFailure(e.message));

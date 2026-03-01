@@ -22,7 +22,7 @@ class AlterarNomeNotifier extends _$AlterarNomeNotifier {
 
     final useCase = ref.read(updateUsuarioUseCaseProvider);
     final usuarioAtualizado = usuario.copyWith(nome: state.nome, sobrenome: state.sobreNome);
-    final result = await useCase(usuario: usuarioAtualizado, usuarioId: usuario.id!);
+    final result = await useCase(usuarioAtualizado);
 
     result.fold(
       (failure) => state = state.copyWith(isLoading: false, erro: failure.message),

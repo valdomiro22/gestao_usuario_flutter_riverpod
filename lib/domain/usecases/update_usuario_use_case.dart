@@ -9,10 +9,10 @@ class UpdateUsuarioUseCase {
 
   UpdateUsuarioUseCase(this._repository);
 
-  Future<Either<Failure, Unit>> call({
-    required UsuarioEntity usuario,
-    required String usuarioId,
-  }) async {
-    return _repository.updateUsuario(usuario: usuario, usuarioId: usuarioId);
+  Future<Either<Failure, Unit>> call(UsuarioEntity usuario) async {
+    if (usuario.id == null) {
+      return Left(FirestoreFailure('Usuário precisa ter um ID para ser atualizado'));
+    }
+    return _repository.updateUsuario(usuario);
   }
 }
