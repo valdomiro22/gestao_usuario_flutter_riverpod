@@ -1,5 +1,3 @@
-import 'dart:developer' as dev;
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:feature_autentication/data/datasource/usuario_datasource.dart';
 

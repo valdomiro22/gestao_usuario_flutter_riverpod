@@ -145,16 +145,14 @@ class AppTheme {
     useMaterial3: true,
     fontFamily: 'Roboto',
     colorScheme: const ColorScheme.light(
-      // Cores principais
-      primary: AppColors.primaryRed,           // Destaque principal
+      primary: AppColors.primaryRed,
       onPrimary: Colors.white,
-      secondary: AppColors.secondaryAccent,    // Acentos em cinza
+      secondary: AppColors.secondaryAccent,
       onSecondary: Colors.white,
-      surface: AppColors.lightSurface,         // Cards
-      onSurface: AppColors.primaryDarkText,    // Texto principal
-      background: AppColors.softBackground,    // Fundo da tela
-      onBackground: AppColors.primaryDarkText,
+      surface: AppColors.lightSurface,
+      onSurface: AppColors.primaryDarkText,
       error: Colors.redAccent,
+      onError: Colors.white,
     ),
 
     scaffoldBackgroundColor: AppColors.softBackground,
@@ -251,19 +249,19 @@ class AppTheme {
   // O Tema Escuro precisaria ser revisado para ter o mesmo alto contraste,
   // mas o padrão de cores principais (vermelho, cinzas) continua válido.
   static ThemeData get darkTheme => ThemeData(
-    // ... (Manter lógica do dark mode anterior com AppColors.primaryRed e cores escuras)
     useMaterial3: true,
     fontFamily: 'Roboto',
     colorScheme: const ColorScheme.dark(
       primary: AppColors.primaryRed,
       onPrimary: Colors.white,
-      secondary: AppColors.inputBorder, // Cinza claro como acento
+      secondary: AppColors.inputBorder,
       onSecondary: Colors.black,
       surface: Color(0xFF263238),
       onSurface: Colors.white,
-      background: Color(0xFF1E272C),
-      onBackground: Colors.white,
+      error: Colors.redAccent,
+      onError: Colors.white,
     ),
+
     scaffoldBackgroundColor: const Color(0xFF1E272C),
   );
 }
