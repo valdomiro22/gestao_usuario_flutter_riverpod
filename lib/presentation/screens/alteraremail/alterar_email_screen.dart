@@ -86,10 +86,6 @@ class _AlterarEmailScreenState extends ConsumerState<AlterarEmailScreen> {
               texto: 'Alterar',
               clique: () {
                 notifier.alterar(widget.usuario);
-                if (state.erroNewEmail != null || state.erroPassword != null) {
-                  _novoEmail.clear();
-                  _senhaController.clear();
-                }
               },
             ),
           ],

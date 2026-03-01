@@ -7,6 +7,7 @@ import 'package:feature_autentication/presentation/screens/alterarnome/alterar_n
 import 'package:feature_autentication/presentation/screens/alterarsenha/alterar_senha_screen.dart';
 import 'package:feature_autentication/presentation/screens/cadastro/cadastro_screen.dart';
 import 'package:feature_autentication/presentation/screens/configuracoes/configuracoes_screen.dart';
+import 'package:feature_autentication/presentation/screens/deletarconta/deletar_conta_screen.dart';
 import 'package:feature_autentication/presentation/screens/logar/logar_screen.dart';
 import 'package:feature_autentication/presentation/screens/recuperarsenha/recuperar_senha_screen.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +44,14 @@ class AppRoutes {
         return const Scaffold(body: Center(child: Text('Item não encontrado - Alterar senha do usuário')));
       }
       return AlterarSenhaScreen(usuario: usuario);
+    }),
+
+    GoRoute(path: AppRoutesNames.deletarConta, builder: (context, state) {
+      final usuario = state.extra as UsuarioEntity?;
+      if (usuario == null) {
+        return const Scaffold(body: Center(child: Text('Item não encontrado - Alterar senha do usuário')));
+      }
+      return DeletarContaScreen(usuario: usuario);
     }),
   ];
 }

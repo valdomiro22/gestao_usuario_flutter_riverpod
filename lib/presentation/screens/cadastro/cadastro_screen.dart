@@ -1,3 +1,5 @@
+import 'package:feature_autentication/core/common/widgets/carregando_widget.dart';
+import 'package:feature_autentication/core/common/widgets/mensagem_erro_widget.dart';
 import 'package:feature_autentication/presentation/screens/cadastro/cadastro_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -62,8 +64,7 @@ class _CadastroScreenState extends ConsumerState<CadastroScreen> {
                   onChanged: (v) => notifier.setNome(v),
                   decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Ex: João'),
                 ),
-                if (state.erroNome != null)
-                  Text(state.erroNome ?? '' , style: TextStyle(color: Colors.red)),
+                if (state.erroNome != null) MensagemErroWidget(mensagem: state.erroNome),
                 const SizedBox(height: 10),
 
                 const Text('Sobrenome'),
@@ -72,8 +73,7 @@ class _CadastroScreenState extends ConsumerState<CadastroScreen> {
                   onChanged: (v) => notifier.setSobrenome(v),
                   decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Ex: Silva'),
                 ),
-                if (state.erroSobrenome != null)
-                  Text(state.erroSobrenome ?? '' , style: TextStyle(color: Colors.red)),
+                if (state.erroSobrenome != null) MensagemErroWidget(mensagem: state.erroSobrenome),
                 const SizedBox(height: 10),
 
                 const Text('Email'),
@@ -85,8 +85,7 @@ class _CadastroScreenState extends ConsumerState<CadastroScreen> {
                     hintText: 'Ex: joao.silva@test.com',
                   ),
                 ),
-                if (state.erroEmail != null)
-                  Text(state.erroEmail ?? '' , style: TextStyle(color: Colors.red)),
+                if (state.erroEmail != null) MensagemErroWidget(mensagem: state.erroEmail),
                 const SizedBox(height: 10),
 
                 const Text('Senha'),
@@ -95,8 +94,7 @@ class _CadastroScreenState extends ConsumerState<CadastroScreen> {
                   onChanged: (v) => notifier.setSenha(v),
                   decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Ex: dT2#3d'),
                 ),
-                if (state.erroSenha != null)
-                  Text(state.erroSenha ?? '' , style: TextStyle(color: Colors.red)),
+                if (state.erroSenha != null) MensagemErroWidget(mensagem: state.erroSenha),
                 const SizedBox(height: 10),
 
                 const Text('Confirmar senha'),
@@ -105,36 +103,17 @@ class _CadastroScreenState extends ConsumerState<CadastroScreen> {
                   onChanged: (v) => notifier.setConfirmarSenha(v),
                   decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Ex: dT2#3d'),
                 ),
-                if (state.erroConfirmarSenha != null)
-                  Text(state.erroConfirmarSenha ?? '' , style: TextStyle(color: Colors.red)),
+                if (state.erroConfirmarSenha != null) MensagemErroWidget(mensagem: state.erroConfirmarSenha),
                 const SizedBox(height: 16),
 
-                SizedBox(
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      notifier.cadastrar();
-                      if (state.erroEmail != null || state.erroSenha != null) {
-                        _sobrenomeCtrl.clear();
-                        _senhaCtrl.clear();
-                        _confSenhaCtrl.clear();
-                        _emailCtrl.clear();
-                        _nomeCtrl.clear();
-                      }
-                    },
-                    child: const Text('Cadastrar', style: TextStyle(fontSize: 20)),
-                  ),
+                ElevatedButton(
+                  onPressed: () {
+                    notifier.cadastrar();
+                  },
+                  child: const Text('Cadastrar', style: TextStyle(fontSize: 20)),
                 ),
-                if (state.isLoading)
-                  Padding(
-                    padding: EdgeInsets.only(top: 16),
-                    child: Center(
-                        child: CircularProgressIndicator()
-                    ),
-                  ),
-
-                if (state.erro != null)
-                  Text(state.erro ?? '' , style: TextStyle(color: Colors.red)),
+                if (state.erro != null) MensagemErroWidget(mensagem: state.erro),
+                if (state.isLoading) CarregandoWidget(),
                 const SizedBox(height: 16),
 
                 Row(

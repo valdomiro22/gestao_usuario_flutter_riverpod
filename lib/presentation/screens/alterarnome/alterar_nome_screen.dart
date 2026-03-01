@@ -85,10 +85,6 @@ class _AlterarNomeScreenState extends ConsumerState<AlterarNomeScreen> {
               texto: 'Alterar',
               clique: () {
                 notifier.alterar(widget.usuario);
-                if (state.erroNome != null || state.erroSobreNome != null) {
-                  _nomeController.clear();
-                  _sobrenomeController.clear();
-                }
               },
             ),
           ],

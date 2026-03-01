@@ -91,7 +91,10 @@ class _ConfiguracoesScreenState extends ConsumerState<ConfiguracoesUsuarioScreen
                   CustomButtomWidget(texto: 'Deslogar', clique: () => deslogarNotifier.deslogar()),
                   const SizedBox(height: 16),
 
-                  CustomButtomWidget(texto: 'Excluir Conta', clique: () {}),
+                  CustomButtomWidget(
+                    texto: 'Excluir Conta',
+                    clique: () => context.push(AppRoutesNames.deletarConta, extra: usuario),
+                  ),
                 ],
               ),
             ),

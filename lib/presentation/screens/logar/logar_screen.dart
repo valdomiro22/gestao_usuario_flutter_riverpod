@@ -14,14 +14,14 @@ class LogarScreen extends ConsumerStatefulWidget {
 }
 
 class _LoginScreenState extends ConsumerState<LogarScreen> {
-  final _emailCtrl = TextEditingController();
-  final _senhaCtrl = TextEditingController();
+  final _emailController = TextEditingController();
+  final _senhaController = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
-    _senhaCtrl.dispose();
-    _emailCtrl.dispose();
+    _senhaController.dispose();
+    _emailController.dispose();
   }
 
   @override
@@ -31,8 +31,8 @@ class _LoginScreenState extends ConsumerState<LogarScreen> {
 
     ref.listen(logarProvider, (previous, next) {
       if (next.isSucess) {
-        _emailCtrl.clear();
-        _senhaCtrl.clear();
+        _emailController.clear();
+        _senhaController.clear();
       }
     });
 
@@ -49,7 +49,7 @@ class _LoginScreenState extends ConsumerState<LogarScreen> {
 
                 const Text('Email'),
                 TextField(
-                  controller: _emailCtrl,
+                  controller: _emailController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Ex: joao.silva@test.com',
@@ -61,7 +61,7 @@ class _LoginScreenState extends ConsumerState<LogarScreen> {
 
                 const Text('Senha'),
                 TextField(
-                  controller: _senhaCtrl,
+                  controller: _senhaController,
                   decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Ex: dT2#3d'),
                   onChanged: (v) => notifier.setSenha(v),
                 ),
@@ -78,19 +78,13 @@ class _LoginScreenState extends ConsumerState<LogarScreen> {
                 if (state.isLoading) CarregandoWidget(),
                 const SizedBox(height: 16),
 
-                SizedBox(
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      notifier.logar();
-                      if (state.erroEmail != null || state.erroSenha != null) {
-                        _emailCtrl.clear();
-                        _senhaCtrl.clear();
-                      }
-                    },
-                    child: const Text('Logar', style: TextStyle(fontSize: 20)),
-                  ),
+                ElevatedButton(
+                  onPressed: () {
+                    notifier.logar();
+                  },
+                  child: const Text('Logar', style: TextStyle(fontSize: 20)),
                 ),
+
                 const SizedBox(height: 16),
 
                 Row(
