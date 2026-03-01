@@ -107,9 +107,7 @@ class _CadastroScreenState extends ConsumerState<CadastroScreen> {
                 const SizedBox(height: 16),
 
                 ElevatedButton(
-                  onPressed: () {
-                    notifier.cadastrar();
-                  },
+                  onPressed: () => notifier.cadastrar(),
                   child: const Text('Cadastrar', style: TextStyle(fontSize: 20)),
                 ),
                 if (state.erro != null) MensagemErroWidget(mensagem: state.erro),

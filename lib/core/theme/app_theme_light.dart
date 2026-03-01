@@ -134,7 +134,6 @@ class AppTheme {
   }
 }*/
 
-
 import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
@@ -163,11 +162,7 @@ class AppTheme {
       foregroundColor: Colors.white,
       elevation: 0,
       centerTitle: true,
-      titleTextStyle: TextStyle(
-        color: Colors.white,
-        fontSize: 20,
-        fontWeight: FontWeight.w500,
-      ),
+      titleTextStyle: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w500),
     ),
 
     // Configuração dos Cards
@@ -186,9 +181,7 @@ class AppTheme {
         backgroundColor: AppColors.primaryRed,
         foregroundColor: Colors.white,
         elevation: 0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
         textStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
       ),
@@ -215,15 +208,18 @@ class AppTheme {
         color: AppColors.primaryDarkText,
         fontSize: 24,
       ),
-      bodyLarge: TextStyle(color: AppColors.primaryDarkText, fontSize: 16), // Principal texto (escuro)
-      bodyMedium: TextStyle(color: AppColors.secondaryText, fontSize: 14), // Texto secundário (cinza)
+      bodyLarge: TextStyle(color: AppColors.primaryDarkText, fontSize: 16),
+      // Principal texto (escuro)
+      bodyMedium: TextStyle(color: AppColors.secondaryText, fontSize: 14),
+      // Texto secundário (cinza)
       labelLarge: const TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
     ),
 
     // Configuração dos Campos de Input (Text Fields)
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.lightSurface, // Fundo branco dentro do campo
+      fillColor: AppColors.lightSurface,
+      // Fundo branco dentro do campo
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
         borderSide: const BorderSide(color: AppColors.inputBorder, width: 1.0),
@@ -234,7 +230,10 @@ class AppTheme {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
-        borderSide: const BorderSide(color: AppColors.primaryRed, width: 2.0), // Foco com borda vermelha
+        borderSide: const BorderSide(
+          color: AppColors.primaryRed,
+          width: 2.0,
+        ), // Foco com borda vermelha
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),

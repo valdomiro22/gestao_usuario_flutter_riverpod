@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$UsuarioModel {
 
- String? get id; String get nome; String get sobrenome; String get email; DateTime get dataCriacao; String? get urlFotoPerfil;
+ String? get id; String get nome; String get sobrenome; String get email; DateTime get dataCriacao; String get urlFotoPerfil;
 /// Create a copy of UsuarioModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $UsuarioModelCopyWith<$Res>  {
   factory $UsuarioModelCopyWith(UsuarioModel value, $Res Function(UsuarioModel) _then) = _$UsuarioModelCopyWithImpl;
 @useResult
 $Res call({
- String? id, String nome, String sobrenome, String email, DateTime dataCriacao, String? urlFotoPerfil
+ String? id, String nome, String sobrenome, String email, DateTime dataCriacao, String urlFotoPerfil
 });
 
 
@@ -65,15 +65,15 @@ class _$UsuarioModelCopyWithImpl<$Res>
 
 /// Create a copy of UsuarioModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? nome = null,Object? sobrenome = null,Object? email = null,Object? dataCriacao = null,Object? urlFotoPerfil = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? nome = null,Object? sobrenome = null,Object? email = null,Object? dataCriacao = null,Object? urlFotoPerfil = null,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,nome: null == nome ? _self.nome : nome // ignore: cast_nullable_to_non_nullable
 as String,sobrenome: null == sobrenome ? _self.sobrenome : sobrenome // ignore: cast_nullable_to_non_nullable
 as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,dataCriacao: null == dataCriacao ? _self.dataCriacao : dataCriacao // ignore: cast_nullable_to_non_nullable
-as DateTime,urlFotoPerfil: freezed == urlFotoPerfil ? _self.urlFotoPerfil : urlFotoPerfil // ignore: cast_nullable_to_non_nullable
-as String?,
+as DateTime,urlFotoPerfil: null == urlFotoPerfil ? _self.urlFotoPerfil : urlFotoPerfil // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 
@@ -155,7 +155,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String nome,  String sobrenome,  String email,  DateTime dataCriacao,  String? urlFotoPerfil)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String nome,  String sobrenome,  String email,  DateTime dataCriacao,  String urlFotoPerfil)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UsuarioModel() when $default != null:
 return $default(_that.id,_that.nome,_that.sobrenome,_that.email,_that.dataCriacao,_that.urlFotoPerfil);case _:
@@ -176,7 +176,7 @@ return $default(_that.id,_that.nome,_that.sobrenome,_that.email,_that.dataCriaca
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String nome,  String sobrenome,  String email,  DateTime dataCriacao,  String? urlFotoPerfil)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String nome,  String sobrenome,  String email,  DateTime dataCriacao,  String urlFotoPerfil)  $default,) {final _that = this;
 switch (_that) {
 case _UsuarioModel():
 return $default(_that.id,_that.nome,_that.sobrenome,_that.email,_that.dataCriacao,_that.urlFotoPerfil);}
@@ -193,7 +193,7 @@ return $default(_that.id,_that.nome,_that.sobrenome,_that.email,_that.dataCriaca
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String nome,  String sobrenome,  String email,  DateTime dataCriacao,  String? urlFotoPerfil)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String nome,  String sobrenome,  String email,  DateTime dataCriacao,  String urlFotoPerfil)?  $default,) {final _that = this;
 switch (_that) {
 case _UsuarioModel() when $default != null:
 return $default(_that.id,_that.nome,_that.sobrenome,_that.email,_that.dataCriacao,_that.urlFotoPerfil);case _:
@@ -208,7 +208,7 @@ return $default(_that.id,_that.nome,_that.sobrenome,_that.email,_that.dataCriaca
 @JsonSerializable()
 
 class _UsuarioModel extends UsuarioModel {
-  const _UsuarioModel({this.id, required this.nome, required this.sobrenome, required this.email, required this.dataCriacao, this.urlFotoPerfil}): super._();
+  const _UsuarioModel({this.id, required this.nome, required this.sobrenome, required this.email, required this.dataCriacao, this.urlFotoPerfil = ''}): super._();
   factory _UsuarioModel.fromJson(Map<String, dynamic> json) => _$UsuarioModelFromJson(json);
 
 @override final  String? id;
@@ -216,7 +216,7 @@ class _UsuarioModel extends UsuarioModel {
 @override final  String sobrenome;
 @override final  String email;
 @override final  DateTime dataCriacao;
-@override final  String? urlFotoPerfil;
+@override@JsonKey() final  String urlFotoPerfil;
 
 /// Create a copy of UsuarioModel
 /// with the given fields replaced by the non-null parameter values.
@@ -251,7 +251,7 @@ abstract mixin class _$UsuarioModelCopyWith<$Res> implements $UsuarioModelCopyWi
   factory _$UsuarioModelCopyWith(_UsuarioModel value, $Res Function(_UsuarioModel) _then) = __$UsuarioModelCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String nome, String sobrenome, String email, DateTime dataCriacao, String? urlFotoPerfil
+ String? id, String nome, String sobrenome, String email, DateTime dataCriacao, String urlFotoPerfil
 });
 
 
@@ -268,15 +268,15 @@ class __$UsuarioModelCopyWithImpl<$Res>
 
 /// Create a copy of UsuarioModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? nome = null,Object? sobrenome = null,Object? email = null,Object? dataCriacao = null,Object? urlFotoPerfil = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? nome = null,Object? sobrenome = null,Object? email = null,Object? dataCriacao = null,Object? urlFotoPerfil = null,}) {
   return _then(_UsuarioModel(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,nome: null == nome ? _self.nome : nome // ignore: cast_nullable_to_non_nullable
 as String,sobrenome: null == sobrenome ? _self.sobrenome : sobrenome // ignore: cast_nullable_to_non_nullable
 as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,dataCriacao: null == dataCriacao ? _self.dataCriacao : dataCriacao // ignore: cast_nullable_to_non_nullable
-as DateTime,urlFotoPerfil: freezed == urlFotoPerfil ? _self.urlFotoPerfil : urlFotoPerfil // ignore: cast_nullable_to_non_nullable
-as String?,
+as DateTime,urlFotoPerfil: null == urlFotoPerfil ? _self.urlFotoPerfil : urlFotoPerfil // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 

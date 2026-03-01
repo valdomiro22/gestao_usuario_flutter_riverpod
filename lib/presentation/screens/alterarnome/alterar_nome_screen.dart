@@ -83,9 +83,7 @@ class _AlterarNomeScreenState extends ConsumerState<AlterarNomeScreen> {
 
             CustomButtomWidget(
               texto: 'Alterar',
-              clique: () {
-                notifier.alterar(widget.usuario);
-              },
+              clique: () => notifier.alterar(widget.usuario),
             ),
           ],
         ),

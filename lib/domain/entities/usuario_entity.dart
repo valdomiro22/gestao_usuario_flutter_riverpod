@@ -4,7 +4,7 @@ class UsuarioEntity {
   final String sobrenome;
   final String email;
   final DateTime dataCriacao;
-  final String? urlFotoPerfil;
+  final String urlFotoPerfil;
 
   UsuarioEntity({
     this.id,
@@ -12,7 +12,7 @@ class UsuarioEntity {
     required this.sobrenome,
     required this.email,
     required this.dataCriacao,
-    this.urlFotoPerfil
+    this.urlFotoPerfil = '',
   });
 
   String get nomeCompleto => '$nome $sobrenome'.trim();

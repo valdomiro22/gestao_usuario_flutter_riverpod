@@ -65,9 +65,7 @@ class _RecuperarSenhaScreenState extends ConsumerState<RecuperarSenhaScreen> {
 
             const SizedBox(height: AppDimens.espacamentoG),
             ElevatedButton(
-              onPressed: () {
-                ref.read(recuperarSenhaProvider.notifier).enviarLink();
-              },
+              onPressed: () => ref.read(recuperarSenhaProvider.notifier).enviarLink(),
               child: Text('Enviar'),
             ),
           ],

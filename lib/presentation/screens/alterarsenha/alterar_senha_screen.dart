@@ -84,9 +84,7 @@ class _AlterarSenhaScreenState extends ConsumerState<AlterarSenhaScreen> {
 
             CustomButtomWidget(
               texto: 'Alterar',
-              clique: () {
-                notifier.alterar(widget.usuario);
-              },
+              clique: () => notifier.alterar(widget.usuario),
             ),
           ],
         ),

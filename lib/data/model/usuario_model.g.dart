@@ -13,7 +13,7 @@ _UsuarioModel _$UsuarioModelFromJson(Map<String, dynamic> json) =>
       sobrenome: json['sobrenome'] as String,
       email: json['email'] as String,
       dataCriacao: DateTime.parse(json['dataCriacao'] as String),
-      urlFotoPerfil: json['urlFotoPerfil'] as String?,
+      urlFotoPerfil: json['urlFotoPerfil'] as String? ?? '',
     );
 
 Map<String, dynamic> _$UsuarioModelToJson(_UsuarioModel instance) =>

@@ -1,5 +1,6 @@
 import 'package:feature_autentication/core/constants/app_dimens.dart';
 import 'package:feature_autentication/presentation/buscarusuario/buscar_usuario_notifier.dart';
+import 'package:feature_autentication/presentation/screens/configuracoes/atualizar_foto_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -20,6 +21,7 @@ class ConfiguracoesUsuarioScreen extends ConsumerStatefulWidget {
 class _ConfiguracoesScreenState extends ConsumerState<ConfiguracoesUsuarioScreen> {
   @override
   Widget build(BuildContext context) {
+    final fotoPerfilNotifier = ref.watch(atualizarFotoProvider.notifier);
     final usuarioState = ref.watch(buscarUsuarioProvider);
     final deslogarNotifier = ref.watch(deslogarProvider.notifier);
 
@@ -44,11 +46,7 @@ class _ConfiguracoesScreenState extends ConsumerState<ConfiguracoesUsuarioScreen
                           bottom: 0,
                           right: 0,
                           child: GestureDetector(
-                            onTap: () {
-                              // final usuarioAtualizado = usuario.copyWith(fotoPerfilUrl: )
-
-                              // fotoNotifier.atualizar(usuario: usuario);
-                            },
+                            onTap: () => fotoPerfilNotifier.atualizar(usuario: usuario),
                             child: CircleAvatar(
                               radius: 20,
                               backgroundColor: AppColors.secondaryRed,

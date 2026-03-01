@@ -79,9 +79,7 @@ class _LoginScreenState extends ConsumerState<LogarScreen> {
                 const SizedBox(height: 16),
 
                 ElevatedButton(
-                  onPressed: () {
-                    notifier.logar();
-                  },
+                  onPressed: () => notifier.logar(),
                   child: const Text('Logar', style: TextStyle(fontSize: 20)),
                 ),
 

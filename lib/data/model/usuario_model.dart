@@ -11,7 +11,7 @@ sealed class UsuarioModel with _$UsuarioModel {
     required String sobrenome,
     required String email,
     required DateTime dataCriacao,
-    String? urlFotoPerfil,
+    @Default('') String urlFotoPerfil,
 }) = _UsuarioModel;
 
   factory UsuarioModel.fromJson(Map<String, dynamic> json) => _$UsuarioModelFromJson(json);

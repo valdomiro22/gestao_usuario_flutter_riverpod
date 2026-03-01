@@ -84,9 +84,7 @@ class _AlterarEmailScreenState extends ConsumerState<AlterarEmailScreen> {
 
             CustomButtomWidget(
               texto: 'Alterar',
-              clique: () {
-                notifier.alterar(widget.usuario);
-              },
+              clique: () => notifier.alterar(widget.usuario),
             ),
           ],
         ),
