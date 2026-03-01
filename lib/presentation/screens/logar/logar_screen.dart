@@ -3,6 +3,7 @@ import 'package:feature_autentication/core/common/widgets/mensagem_erro_widget.d
 import 'package:feature_autentication/navigate/app_routes_names.dart';
 import 'package:feature_autentication/presentation/screens/logar/logar_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -36,67 +37,74 @@ class _LoginScreenState extends ConsumerState<LogarScreen> {
       }
     });
 
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            padding: EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const Text('Login', style: TextStyle(fontSize: 42)),
-                const SizedBox(height: 20),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.dark,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: SafeArea(
+          child: Center(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Text('Login', style: TextStyle(fontSize: 42)),
+                  const SizedBox(height: 20),
 
-                const Text('Email'),
-                TextField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Ex: joao.silva@test.com',
-                  ),
-                  onChanged: (v) => notifier.setEmail(v),
-                ),
-                if (state.erroEmail != null) MensagemErroWidget(mensagem: state.erroEmail),
-                const SizedBox(height: 10),
-
-                const Text('Senha'),
-                TextField(
-                  controller: _senhaController,
-                  decoration: InputDecoration(border: OutlineInputBorder(), hintText: 'Ex: dT2#3d'),
-                  onChanged: (v) => notifier.setSenha(v),
-                ),
-                if (state.erroSenha != null) MensagemErroWidget(mensagem: state.erroSenha),
-                if (state.erro != null) MensagemErroWidget(mensagem: state.erro),
-
-                Align(
-                  alignment: Alignment.topRight,
-                  child: TextButton(
-                    onPressed: () => context.push(AppRoutesNames.recuperarSenha),
-                    child: Text('Recuperar Senha'),
-                  ),
-                ),
-                if (state.isLoading) CarregandoWidget(),
-                const SizedBox(height: 16),
-
-                ElevatedButton(
-                  onPressed: () => notifier.logar(),
-                  child: const Text('Logar', style: TextStyle(fontSize: 20)),
-                ),
-
-                const SizedBox(height: 16),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Ainda não possui uma consta?'),
-                    const SizedBox(width: 2),
-                    TextButton(
-                      onPressed: () => context.push(AppRoutesNames.cadastro),
-                      child: const Text('Cadastrar'),
+                  const Text('Email'),
+                  TextField(
+                    controller: _emailController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Ex: joao.silva@test.com',
                     ),
-                  ],
-                ),
-              ],
+                    onChanged: (v) => notifier.setEmail(v),
+                  ),
+                  if (state.erroEmail != null) MensagemErroWidget(mensagem: state.erroEmail),
+                  const SizedBox(height: 10),
+
+                  const Text('Senha'),
+                  TextField(
+                    controller: _senhaController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Ex: dT2#3d',
+                    ),
+                    onChanged: (v) => notifier.setSenha(v),
+                  ),
+                  if (state.erroSenha != null) MensagemErroWidget(mensagem: state.erroSenha),
+                  if (state.erro != null) MensagemErroWidget(mensagem: state.erro),
+
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: TextButton(
+                      onPressed: () => context.push(AppRoutesNames.recuperarSenha),
+                      child: Text('Recuperar Senha'),
+                    ),
+                  ),
+                  if (state.isLoading) CarregandoWidget(),
+                  const SizedBox(height: 16),
+
+                  ElevatedButton(
+                    onPressed: () => notifier.logar(),
+                    child: const Text('Logar', style: TextStyle(fontSize: 20)),
+                  ),
+
+                  const SizedBox(height: 16),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Ainda não possui uma consta?'),
+                      const SizedBox(width: 2),
+                      TextButton(
+                        onPressed: () => context.push(AppRoutesNames.cadastro),
+                        child: const Text('Cadastrar'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

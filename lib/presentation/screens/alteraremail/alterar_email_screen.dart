@@ -46,7 +46,7 @@ class _AlterarEmailScreenState extends ConsumerState<AlterarEmailScreen> {
     });
 
     return Scaffold(
-      appBar: AppBar(title: Text('Alterar Nome')),
+      appBar: AppBar(title: Text('Alterar E-mail')),
       body: Container(
         padding: EdgeInsets.all(AppDimens.paddingPagina),
         child: Column(
