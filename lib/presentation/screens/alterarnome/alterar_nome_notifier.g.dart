@@ -42,7 +42,7 @@ final class AlterarNomeNotifierProvider
 }
 
 String _$alterarNomeNotifierHash() =>
-    r'5c745bddc2ef71b372240f8df1b83a2c6bb4a13a';
+    r'5a8e59c6dd91ba6942ba4b904c82ba9a58d61602';
 
 abstract class _$AlterarNomeNotifier extends $Notifier<AlterarNomeState> {
   AlterarNomeState build();

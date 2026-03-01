@@ -1,5 +1,6 @@
 import 'package:feature_autentication/core/di/usecasesproviders/usuario_use_cases.dart';
 import 'package:feature_autentication/domain/entities/usuario_entity.dart';
+import 'package:feature_autentication/presentation/buscarusuario/buscar_usuario_notifier.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -25,7 +26,10 @@ class AlterarNomeNotifier extends _$AlterarNomeNotifier {
 
     result.fold(
       (failure) => state = state.copyWith(isLoading: false, erro: failure.message),
-      (_) => state = state.copyWith(isLoading: false, isSucess: true),
+      (_) {
+        ref.invalidate(buscarUsuarioProvider);
+        return state = state.copyWith(isLoading: false, isSucess: true);
+      },
     );
   }
 

@@ -70,7 +70,7 @@ class _ConfiguracoesScreenState extends ConsumerState<ConfiguracoesUsuarioScreen
 
                 CustomButtomWidget(
                   texto: 'Alterar Nome',
-                  clique: () => context.push(AppRoutesNames.alterarNome),
+                  clique: () => context.push(AppRoutesNames.alterarNome, extra: usuario),
                 ),
                 const SizedBox(height: 16),
 
