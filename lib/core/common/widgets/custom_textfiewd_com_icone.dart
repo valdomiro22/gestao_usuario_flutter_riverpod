@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class CustomTextfiewdConIcone extends StatelessWidget {
   final TextEditingController controller;
-  final String hint;
-  final String label;
+  final String? hint;
+  final String? label;
   final bool obscureText;
   final IconData icone;
   final TextInputType inputType;
@@ -12,8 +12,8 @@ class CustomTextfiewdConIcone extends StatelessWidget {
   const CustomTextfiewdConIcone({
     super.key,
     required this.controller,
-    required this.hint,
-    required this.label,
+    this.hint,
+    this.label,
     required this.icone,
     required this.inputType,
     this.obscureText = false,
@@ -28,7 +28,7 @@ class CustomTextfiewdConIcone extends StatelessWidget {
       obscureText: obscureText,
       onChanged: onChanged,
       decoration: InputDecoration(
-        prefixIcon: Icon(icone),
+        prefixIcon: Icon(icone, color: Colors.grey[600],),
         hintText: hint,
         labelText: label,
         border: OutlineInputBorder()

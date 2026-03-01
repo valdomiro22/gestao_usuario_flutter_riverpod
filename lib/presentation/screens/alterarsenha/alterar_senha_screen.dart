@@ -1,3 +1,4 @@
+import 'package:feature_autentication/core/common/widgets/custom_textfiewd_com_icone.dart';
 import 'package:feature_autentication/domain/entities/usuario_entity.dart';
 import 'package:feature_autentication/presentation/screens/alterarsenha/alterar_senha_notifier.dart';
 import 'package:flutter/material.dart';
@@ -58,23 +59,23 @@ class _AlterarSenhaScreenState extends ConsumerState<AlterarSenhaScreen> {
             ),
             const SizedBox(height: 16),
 
-            CustomTextfiewdSemIcone(
+            CustomTextfiewdConIcone(
               controller: _novaSenhaController,
               hint: AppStrings.exemploNome,
               label: 'Nova senha',
-              inputType: TextInputType.name,
-              comBorda: true,
+              inputType: TextInputType.visiblePassword,
               onChanged: (v) => notifier.setNovaSenha(v),
+              icone: Icons.lock,
             ),
             if (state.erroNovaSenha != null) MensagemErroWidget(mensagem: state.erroNovaSenha),
             const SizedBox(height: 16),
 
-            CustomTextfiewdSemIcone(
+            CustomTextfiewdConIcone(
               controller: _senhaAtualController,
               hint: AppStrings.exemploSobrenome,
               label: 'Senha atual',
-              inputType: TextInputType.name,
-              comBorda: true,
+              inputType: TextInputType.visiblePassword,
+              icone: Icons.lock,
               onChanged: (v) => notifier.setSenhaAtual(v),
             ),
             if (state.erroSenhaAtual != null) MensagemErroWidget(mensagem: state.erroSenhaAtual),

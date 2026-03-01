@@ -1,4 +1,5 @@
 import 'package:feature_autentication/core/common/widgets/carregando_widget.dart';
+import 'package:feature_autentication/core/common/widgets/custom_textfiewd_com_icone.dart';
 import 'package:feature_autentication/core/common/widgets/mensagem_erro_widget.dart';
 import 'package:feature_autentication/navigate/app_routes_names.dart';
 import 'package:feature_autentication/presentation/screens/logar/logar_notifier.dart';
@@ -52,24 +53,22 @@ class _LoginScreenState extends ConsumerState<LogarScreen> {
                   const SizedBox(height: 20),
 
                   const Text('Email'),
-                  TextField(
+                  CustomTextfiewdConIcone(
                     controller: _emailController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Ex: joao.silva@test.com',
-                    ),
+                    icone: Icons.email,
+                    inputType: TextInputType.emailAddress,
                     onChanged: (v) => notifier.setEmail(v),
+                    hint: 'Digite seu e-mail',
                   ),
                   if (state.erroEmail != null) MensagemErroWidget(mensagem: state.erroEmail),
                   const SizedBox(height: 10),
 
-                  const Text('Senha'),
-                  TextField(
+                  CustomTextfiewdConIcone(
                     controller: _senhaController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Ex: dT2#3d',
-                    ),
+                    icone: Icons.lock,
+                    inputType: TextInputType.visiblePassword,
+                    hint: 'Digite sua senha',
+                    obscureText: true,
                     onChanged: (v) => notifier.setSenha(v),
                   ),
                   if (state.erroSenha != null) MensagemErroWidget(mensagem: state.erroSenha),

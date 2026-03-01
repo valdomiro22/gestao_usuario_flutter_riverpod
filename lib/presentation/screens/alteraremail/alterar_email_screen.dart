@@ -1,3 +1,4 @@
+import 'package:feature_autentication/core/common/widgets/custom_textfiewd_com_icone.dart';
 import 'package:feature_autentication/domain/entities/usuario_entity.dart';
 import 'package:feature_autentication/presentation/screens/alteraremail/alterar_email_notifier.dart';
 import 'package:flutter/material.dart';
@@ -58,23 +59,23 @@ class _AlterarEmailScreenState extends ConsumerState<AlterarEmailScreen> {
             ),
             const SizedBox(height: 16),
 
-            CustomTextfiewdSemIcone(
+            CustomTextfiewdConIcone(
               controller: _novoEmail,
               hint: AppStrings.exemploNome,
               label: 'Novo e-mail',
-              inputType: TextInputType.name,
-              comBorda: true,
+              inputType: TextInputType.emailAddress,
+              icone: Icons.email,
               onChanged: (v) => notifier.setNovoEmail(v),
             ),
             if (state.erroNewEmail != null) MensagemErroWidget(mensagem: state.erroNewEmail),
             const SizedBox(height: 16),
 
-            CustomTextfiewdSemIcone(
+            CustomTextfiewdConIcone(
               controller: _senhaController,
               hint: AppStrings.exemploSobrenome,
               label: 'Senha atual',
-              inputType: TextInputType.name,
-              comBorda: true,
+              inputType: TextInputType.emailAddress,
+              icone: Icons.email,
               onChanged: (v) => notifier.setSenha(v),
             ),
             if (state.erroPassword != null) MensagemErroWidget(mensagem: state.erroPassword),
