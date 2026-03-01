@@ -117,7 +117,7 @@ Sinta-se à vontade para abrir **issues** ou enviar **pull requests**.
 
 ## Licença
 
-[MIT License](LICENSE) – fique à vontade para usar, modificar e distribuir.
+fique à vontade para usar, modificar e distribuir.
 
 ---
 
