@@ -82,7 +82,10 @@ class _ConfiguracoesScreenState extends ConsumerState<ConfiguracoesUsuarioScreen
                   ),
                   const SizedBox(height: 16),
 
-                  CustomButtomWidget(texto: 'Alterar Senha', clique: () {}),
+                  CustomButtomWidget(
+                    texto: 'Alterar Senha',
+                    clique: () => context.push(AppRoutesNames.alterarSenha, extra: usuario),
+                  ),
                   const SizedBox(height: 16),
 
                   CustomButtomWidget(texto: 'Deslogar', clique: () => deslogarNotifier.deslogar()),
